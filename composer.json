@@ -1,0 +1,15 @@
+{
+    "name": "baserproject/bc-csv-import-sample-order-details",
+    "type": "cakephp-plugin",
+    "license": "MIT",
+    "description": "BcCsvImportCore を使った1対多CSVインポートのサンプルプラグイン（受注＋明細）",
+    "vendor-dir": "../../vendor",
+    "autoload": {
+        "psr-4": {
+            "BcCsvImportSampleOrderDetails\\": "src/"
+        }
+    },
+    "require": {
+        "baserproject/bc-csv-import-core": "*"
+    }
+}
