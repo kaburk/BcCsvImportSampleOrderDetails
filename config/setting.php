@@ -22,10 +22,10 @@ return [
             ],
         ],
     ],
-    'BcCsvImportCore' => [
-        'showImportStrategySelect' => true,
+    'BcCsvImportSampleOrderDetails' => [
+        'showImportStrategySelect' => false,
         'defaultImportStrategy'    => 'append',
-        'showDuplicateModeSelect'  => true,
+        'showDuplicateModeSelect'  => false,
         'defaultDuplicateMode'     => 'skip',
     ],
 ];
