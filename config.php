@@ -5,4 +5,10 @@ return [
     'description' => __d('baser_core', 'BcCsvImportCore を使った1対多CSVインポートのサンプルプラグインです（受注＋明細）。'),
     'author' => 'kaburk',
     'url' => 'https://blog.kaburk.com/',
+    'adminLink' => [
+        'prefix' => 'Admin',
+        'plugin' => 'BcCsvImportSampleOrderDetails',
+        'controller' => 'SampleOrderDetailsCsvImports',
+        'action' => 'index',
+    ],
 ];
