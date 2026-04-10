@@ -32,29 +32,29 @@ class BcCsvSampleOrdersTable extends Table
     {
         $validator
             ->scalar('order_no')
-            ->maxLength('order_no', 50)
+            ->maxLength('order_no', 50, __d('baser_core', '受注番号は50文字以内で入力してください。'))
             ->requirePresence('order_no', 'create')
-            ->notEmptyString('order_no');
+            ->notEmptyString('order_no', __d('baser_core', '受注番号は必須です。'));
 
         $validator
             ->scalar('customer_name')
-            ->maxLength('customer_name', 255)
+            ->maxLength('customer_name', 255, __d('baser_core', '顧客名は255文字以内で入力してください。'))
             ->requirePresence('customer_name', 'create')
-            ->notEmptyString('customer_name');
+            ->notEmptyString('customer_name', __d('baser_core', '顧客名は必須です。'));
 
         $validator
-            ->email('customer_email')
-            ->maxLength('customer_email', 255)
+            ->email('customer_email', false, __d('baser_core', 'メールアドレスの形式が正しくありません。'))
+            ->maxLength('customer_email', 255, __d('baser_core', 'メールアドレスは255文字以内で入力してください。'))
             ->allowEmptyString('customer_email');
 
         $validator
             ->scalar('customer_tel')
-            ->maxLength('customer_tel', 30)
+            ->maxLength('customer_tel', 30, __d('baser_core', '電話番号は30文字以内で入力してください。'))
             ->allowEmptyString('customer_tel');
 
         $validator
             ->scalar('status')
-            ->maxLength('status', 30)
+            ->maxLength('status', 30, __d('baser_core', 'ステータスは30文字以内で入力してください。'))
             ->allowEmptyString('status');
 
         $validator

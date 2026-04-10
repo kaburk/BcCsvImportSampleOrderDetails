@@ -32,38 +32,38 @@ class BcCsvSampleOrderDetailsTable extends Table
         $validator
             ->integer('order_id')
             ->requirePresence('order_id', 'create')
-            ->notEmptyString('order_id');
+            ->notEmptyString('order_id', __d('baser_core', '受注IDは必須です。'));
 
         $validator
             ->scalar('order_no')
-            ->maxLength('order_no', 50)
+            ->maxLength('order_no', 50, __d('baser_core', '受注番号は50文字以内で入力してください。'))
             ->requirePresence('order_no', 'create')
-            ->notEmptyString('order_no');
+            ->notEmptyString('order_no', __d('baser_core', '受注番号は必須です。'));
 
         $validator
             ->scalar('product_sku')
-            ->maxLength('product_sku', 100)
+            ->maxLength('product_sku', 100, __d('baser_core', 'SKUは100文字以内で入力してください。'))
             ->allowEmptyString('product_sku');
 
         $validator
             ->scalar('product_name')
-            ->maxLength('product_name', 255)
+            ->maxLength('product_name', 255, __d('baser_core', '商品名は255文字以内で入力してください。'))
             ->requirePresence('product_name', 'create')
-            ->notEmptyString('product_name');
+            ->notEmptyString('product_name', __d('baser_core', '商品名は必須です。'));
 
         $validator
             ->integer('quantity')
-            ->greaterThan('quantity', 0)
+            ->greaterThan('quantity', 0, __d('baser_core', '数量は1以上の数値を入力してください。'))
             ->allowEmptyString('quantity');
 
         $validator
             ->integer('unit_price')
-            ->greaterThanOrEqual('unit_price', 0)
+            ->greaterThanOrEqual('unit_price', 0, __d('baser_core', '単価は0以上の数値を入力してください。'))
             ->allowEmptyString('unit_price');
 
         $validator
             ->integer('line_total')
-            ->greaterThanOrEqual('line_total', 0)
+            ->greaterThanOrEqual('line_total', 0, __d('baser_core', '明細小計は0以上の数値を入力してください。'))
             ->allowEmptyString('line_total');
 
         return $validator;
